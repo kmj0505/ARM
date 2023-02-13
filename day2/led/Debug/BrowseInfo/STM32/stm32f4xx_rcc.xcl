@@ -5,9 +5,9 @@
 -funsigned-char
 -MD
 -MF
-C:\Users\IoT13\Documents\iar\led\Debug\BrowseInfo\STM32\stm32f4xx_rcc.pbi.dep
+C:\project\ARM\day2\led\Debug\BrowseInfo\STM32\stm32f4xx_rcc.pbi.dep
 -o
-C:\Users\IoT13\Documents\iar\led\Debug\BrowseInfo\STM32\stm32f4xx_rcc.pbi
+C:\project\ARM\day2\led\Debug\BrowseInfo\STM32\stm32f4xx_rcc.pbi
 -I
 C:\Program Files\IAR Systems\Libraries\STM32F4xx_StdPeriph_Driver\src
 -I
@@ -15,7 +15,7 @@ C:\Program Files\IAR Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\
 -I
 C:\Program Files\IAR Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\
 -I
-C:\Users\IoT13\Documents\iar\led
+C:\project\ARM\day2\led
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\CMSIS\Core\Include\
 -I
@@ -29,7 +29,7 @@ C:\Program Files\IAR Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include
 -I
 C:\Program Files\IAR Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc
 -I
-C:\Users\IoT13\Documents\iar\led
+C:\project\ARM\day2\led
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\CMSIS\Core\Include
 -D__CHAR_BITS__=8

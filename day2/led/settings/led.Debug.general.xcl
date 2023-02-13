@@ -2,7 +2,7 @@
 
 "C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\bin\armSTLINK.dll" 
 
-"C:\Users\IoT13\Documents\iar\led\Debug\Exe\led.out" 
+"C:\project\ARM\day2\led\Debug\Exe\led.out" 
 
 --plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\bin\armbat.dll" 
 

@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\IoT13\Documents\iar\led\settings\led.Debug.general.xcl" --backend -f "C:\Users\IoT13\Documents\iar\led\settings\led.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\project\ARM\day2\led\settings\led.Debug.general.xcl" --backend -f "C:\project\ARM\day2\led\settings\led.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\IoT13\Documents\iar\led\settings\led.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\IoT13\Documents\iar\led\settings\led.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\project\ARM\day2\led\settings\led.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\project\ARM\day2\led\settings\led.Debug.driver.xcl" 
 }
