@@ -1,0 +1,153 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\stm32f4xx_it.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\stm32f4xx_it.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\COMM --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\system_stm32f4xx.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\system_stm32f4xx.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\COMM --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\adc1.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\adc1.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\key.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\key.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\lcd.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\lcd.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\main.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\main.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim10_motor.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim10_motor.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim4_counter.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim4_counter.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim7_fnd.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim7_fnd.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart2.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart2.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.xcl : COMPILER_XCL 
+  xclcommand = -source_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart4.c -xcl_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.xcl -macro_file F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart4.c -D USE_STDPERIPH_DRIVER -D STM32F40_41xxx -o F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Full.h" -I "C$:\Program$ Files\IAR$ Systems\Libraries\CMSIS\Device\ST\STM32F4xx\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Libraries\STM32F4xx_StdPeriph_Driver\inc\\" -I F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\ -Ol -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" --predef_macros F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.tmp
+  rspfile_name = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.xcl.rsp
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\stm32f4xx_it.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\system_stm32f4xx.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\adc1.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\key.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\lcd.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\main.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim10_motor.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim4_counter.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\tim7_fnd.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart2.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.pbi : INDEXER F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.xcl |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\uart4.c
+  flags = -out=F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.pbi -f F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.xcl
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbw : MAKEBROWSE F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbd
+  flags = F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbd -output F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbw
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part0.pbi : PDBLINK F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.pbi |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.pbi $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.pbi
+  flags = -M F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part0.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\stm32f4xx_it.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\COMM\system_stm32f4xx.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\adc1.pbi
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part1.pbi : PDBLINK F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.pbi |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.pbi $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.pbi
+  flags = -M F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part1.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\key.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\lcd.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\main.pbi
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part2.pbi : PDBLINK F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.pbi |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.pbi $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.pbi
+  flags = -M F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part2.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim10_motor.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim4_counter.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\tim7_fnd.pbi
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part3.pbi : PDBLINK F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.pbi |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.pbi
+  flags = -M F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part3.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart2.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\uart4.pbi
+
+build F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbd : PDBLINK F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part0.pbi |  $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part1.pbi $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part2.pbi $
+F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part3.pbi
+  flags = -M F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter.pbd F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part0.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part1.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part2.pbi F$:\김민지\ARM\day10\sampleUart2_project_split_ksh_v3_pb7_counter\Debug\BrowseInfo\sampleUart2_project_split_ksh_v3_pb7_counter_part3.pbi
+
